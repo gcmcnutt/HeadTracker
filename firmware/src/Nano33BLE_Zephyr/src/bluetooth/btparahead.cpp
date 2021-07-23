@@ -50,9 +50,11 @@ static uint8_t bufferIndex;
 static uint8_t crc;
 static uint8_t ct[40];
 static uint8_t overdata[2];
-//static char _address[] = "00:00:00:00:00:00"; // *** FIXME
-static char _address[] =   "Known issue here."; // *** FIXME
+static char _address[] = "00:00:00:00:00:00";
+bt_addr_le_t addrarry[CONFIG_BT_ID_MAX];
+size_t addrcnt=1;
 uint16_t ovridech = 0;
+
 
 // Service UUID
 static struct bt_uuid_128 btparaserv = BT_UUID_INIT_128(
@@ -137,6 +139,11 @@ void BTHeadStart()
     serialWriteln("HT: BLE Started Advertising");
 
     bt_conn_cb_register(&conn_callbacks);
+
+    // Discover BT Address
+    bt_id_get(addrarry, &addrcnt);
+    if(addrcnt > 0)
+        bt_addr_le_to_str(&addrarry[0],_address,sizeof(_address));
 
     crc = 0;
     bufferIndex = 0;

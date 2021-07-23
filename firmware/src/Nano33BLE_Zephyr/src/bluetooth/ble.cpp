@@ -19,7 +19,6 @@
 #include <bluetooth/bluetooth.h>
 #include <bluetooth/conn.h>
 
-#include "PPM/PPMOut.h"
 #include "serial.h"
 #include "io.h"
 #include "nano33ble.h"
@@ -95,6 +94,7 @@ void BTSetMode(btmodet mode)
     case BTSCANONLY:
         BTRmtStop();
         btscanonly = false;
+        break;
     default:
         break;
     }
@@ -168,15 +168,11 @@ const char *BTGetAddress()
     case BTPARAHEAD:
         return BTHeadGetAddress();
     case BTPARARMT:
-        return BTRmtGetAddress();
-        break;
     case BTSCANONLY:
         return BTRmtGetAddress();
-        break;
     default:
         break;
     }
-
     return "BT_DISABLED";
 }
 
