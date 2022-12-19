@@ -70,8 +70,8 @@ jobs:
         run: |
           mkdir output
           cp gui/src/release/HeadTracker.exe output/
-          cp gui/src/css/stylesheet.css output/
-          cp gui/src/css/Background.svg output/
+          # cp gui/src/css/stylesheet.css output/
+          # cp gui/src/css/Background.svg output/
           cd output
           curl -L -o bossac.exe https://github.com/dlktdr/HeadTracker/raw/master/gui/bin/bossac.exe
           windeployqt HeadTracker.exe            
