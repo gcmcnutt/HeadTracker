@@ -121,7 +121,7 @@ unix:!macx {
 #Mac Specific
 macx: {
     DEFINES += "MACOS=yes"
-    ICON = images/IconFile.ico
+    ICON = images/IconFile.svg
 }
 
 DISTFILES += \
