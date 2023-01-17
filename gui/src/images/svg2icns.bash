@@ -21,6 +21,7 @@ if [ "${src_image:(-3)}" != "png" ]; then
     fi
     src_image="${src_image}.png"
 fi
+/bin/ls -lR
 
 iconset_path="./${icns_name}.iconset"
 if [ -e "$iconset_path" ]; then
