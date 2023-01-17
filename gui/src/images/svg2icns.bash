@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -x
 # Creates an icns file from a source image
 
 src_image="$1"
@@ -75,8 +75,6 @@ if [ $? -ne 0 ]; then
     exit 1
 fi
 
-rm -rf "$iconset_path"
-rm -f 
 echo "Done"
 exit 0
 
