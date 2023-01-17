@@ -45,7 +45,7 @@ jobs:
         working-directory: ${{github.workspace}}
         run: |
           cd gui/src/images
-          bash -x svg2icns.bash IconFile.png IconFile
+          bash -x svg2icns.bash IconFile.png
 
       - name: Build
         working-directory: ${{github.workspace}}
