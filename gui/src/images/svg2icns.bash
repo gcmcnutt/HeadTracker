@@ -1,4 +1,4 @@
-#!/bin/bash -x
+#!/bin/bash
 # Creates an icns file from a source image
 
 src_image="$1"
