@@ -41,6 +41,12 @@ jobs:
           modules: 'qtserialport'
           setup-python: false
 
+      - name: Generate Icons
+        working-directory: ${{github.workspace}}
+        run: |
+          cd gui/src/images
+          bash svg2icns.bash IconFile.svg
+
       - name: Build
         working-directory: ${{github.workspace}}
         run: |
