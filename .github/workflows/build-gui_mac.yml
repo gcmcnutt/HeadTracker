@@ -110,6 +110,7 @@ jobs:
           ENV_BUNDLE_ID: org.accelero.headtracker 
 
         run: |
+          echo "user $APPLE_DEV_USER"
           macdeployqt ${ENV_APP_NAME}.app -dmg -sign-for-notarization="${APPLE_DEV_IDENTITY}"
           mkdir dmg
 
